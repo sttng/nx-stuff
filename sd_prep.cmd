@@ -95,10 +95,10 @@ mkdir Emutendo
 mkdir emummc
 cd emummc
 @echo off
-@echo "[emummc]" > emummc.ini
-@echo "enabled = 1" >> emummc.ini
-@echo "sector = 0x2" >> emummc.ini
-@echo "nintendo_path = Emutendo" >> emummc.ini
+(echo [emummc]
+echo enabled = 1 
+echo sector = 0x2
+echo nintendo_path = Emutendo) > filename.txt
 cd..
 
 del *.zip
