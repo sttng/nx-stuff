@@ -47,40 +47,44 @@ curl -L -O -# https://github.com/jimzrt/Incognito_RCM/releases/latest/download/I
 curl -L -O -# https://github.com/DarkMatterCore/nxdumptool/releases/latest/download/nxdumptool.nro
 echo.
 
+REM Getting EdiZon latest version
+echo Getting EdiZon latest version: SD.zip
+curl -L -O -# https://github.com/WerWolv/EdiZon/releases/latest/download/SD.zip
+tar -xf SD.zip
+
 move Incognito_RCM.bin bootloader\payloads >NUL
 tar -xf ChoiDujourNXv102.zip
 move ChoiDujourNX.nro switch >NUL
 move *.txt switch >NUL
 move nxdumptool.nro switch >NUL
 
-REM Getting EdiZon latest version
-echo REM Getting EdiZon latest version: SD.zip
-curl -L -O -# https://github.com/WerWolv/EdiZon/releases/latest/download/SD.zip
-
 REM Getting FTPD latest version
-echo REM Getting FTPD latest version: FTPD.nro
+echo Getting FTPD latest version: FTPD.nro
 curl -L -O -# https://github.com/mtheall/ftpd/releases/latest/download/ftpd.nro
 move ftpd.nro switch >NUL
 
 REM Getting NXThemeInstaller latest version
-echo REM Getting NXThemeInstaller latest version: NXThemesInstaller.nro
+echo Getting NXThemeInstaller latest version: NXThemesInstaller.nro
 curl -L -O -# https://github.com/exelix11/SwitchThemeInjector/releases/latest/download/NXThemesInstaller.nro
 move NXThemesInstaller.nro switch >NUL
 
 REM Getting NX-Shell latest version
-echo REM Getting NX-Shell latest version: NX-Shell.nro
+echo Getting NX-Shell latest version: NX-Shell.nro
 curl -L -O -# https://github.com/joel16/NX-Shell/releases/latest/download/NX-Shell.nro
 move NX-Shell.nro switch >NUL
 
 REM Getting atmosphere-updater latest version
-echo REM Getting atmosphere-updater latest version: atmosphere-updater.nro
+echo Getting atmosphere-updater latest version: atmosphere-updater.nro
 curl -L -O -# https://github.com/ITotalJustice/atmosphere-updater/releases/latest/download/atmosphere-updater.nro
 move atmosphere-updater.nro switch >NUL
 
 REM Getting hbappstore latest version
-echo REM Getting hbappstore latest version: appstore.nro
+echo Getting hbappstore latest version: appstore.nro
 curl -L -O -# https://github.com/vgmoose/hb-appstore/releases/latest/download/appstore.nro
-move appstore.nro switch >NUL
+cd switch
+mkdir appstore
+cd ..
+move appstore.nro switch\appstore >NUL
 
 REM Getting SX OS
 echo Getting SX OS and SX loader
