@@ -170,24 +170,5 @@ mkdir appstore
 cd ..
 move appstore.nro switch\appstore >NUL
 
-REM Getting SX OS
-echo Getting SX OS and SX loader
-curl -L -O -# https://sx.xecuter.com/download/SXOS_beta_v2.9.3.zip
-curl -L -O -# https://sx.xecuter.com/download/payload.bin
-echo.
-
-tar -xf SXOS_beta_v2.9.3.zip
-move payload.bin bootloader\payloads\SXOS_loader.bin >NUL
-
-mkdir Emutendo
-mkdir emummc
-cd emummc
-@echo off
-(echo [emummc]
-echo enabled = 1 
-echo sector = 0x2
-echo nintendo_path = Emutendo) > emummc.ini
-cd..
-
 del *.zip
 cd..
