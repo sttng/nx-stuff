@@ -58,6 +58,9 @@ move hekate_ctcaer_*.bin atmosphere\reboot_payload.bin >NUL
 REM Getting ChoiDujourNXv102
 echo Getting ChoiDujourNXv102
 curl -L -O -# https://files.sshnuke.net/ChoiDujourNXv102.zip
+tar -xf ChoiDujourNXv102.zip
+move ChoiDujourNX.nro switch >NUL
+move *.txt switch >NUL
 echo.
 
 REM Getting Incognito_RCM latest version
@@ -70,6 +73,7 @@ for /f "tokens=2" %%i in ('curl -s %my_url% ^| findstr name') do set RESULT=%%i
 for /f "delims=" %%I IN (%RESULT%) DO SET name=%%I
 echo Getting %name% version: %tag_name%
 curl -L -O -# %URL_latest%
+move Incognito_RCM.bin bootloader\payloads >NUL
 echo.
 
 REM Getting nxdumptool latest version
@@ -82,6 +86,7 @@ for /f "tokens=2" %%i in ('curl -s %my_url% ^| findstr name ^| findstr nro') do 
 for /f "delims=" %%I IN (%RESULT%) DO SET name=%%I
 echo Getting %name% version: %tag_name%
 curl -L -O -# %URL_latest%
+move nxdumptool.nro switch >NUL
 echo.
 
 REM Getting EdiZon latest version
@@ -96,12 +101,6 @@ echo Getting %name% version: %tag_name%
 curl -L -O -# %URL_latest%
 echo.
 tar -xf SD.zip
-
-move Incognito_RCM.bin bootloader\payloads >NUL
-tar -xf ChoiDujourNXv102.zip
-move ChoiDujourNX.nro switch >NUL
-move *.txt switch >NUL
-move nxdumptool.nro switch >NUL
 
 REM Getting FTPD latest version
 SET my_url=https://api.github.com/repos/mtheall/ftpd/releases/latest
@@ -126,8 +125,8 @@ for /f "tokens=2" %%i in ('curl -s %my_url% ^| findstr name ^| findstr nro') do 
 for /f "delims=" %%I IN (%RESULT%) DO SET name=%%I
 echo Getting %name% version: %tag_name%
 curl -L -O -# %URL_latest%
-echo.
 move NXThemesInstaller.nro switch >NUL
+echo.
 
 REM Getting NX-Shell latest version
 SET my_url=https://api.github.com/repos/joel16/NX-Shell/releases/latest
@@ -139,8 +138,8 @@ for /f "tokens=2" %%i in ('curl -s %my_url% ^| findstr name') do set RESULT=%%i
 for /f "delims=" %%I IN (%RESULT%) DO SET name=%%I
 echo Getting %name% version: %tag_name%
 curl -L -O -# %URL_latest%
-echo.
 move NX-Shell.nro switch >NUL
+echo.
 
 REM Getting atmosphere-updater latest version
 SET my_url=https://api.github.com/repos/ITotalJustice/atmosphere-updater/releases/latest
@@ -152,8 +151,8 @@ for /f "tokens=2" %%i in ('curl -s %my_url% ^| findstr name') do set RESULT=%%i
 for /f "delims=" %%I IN (%RESULT%) DO SET name=%%I
 echo Getting %name% version: %tag_name%
 curl -L -O -# %URL_latest%
-echo.
 move atmosphere-updater.nro switch >NUL
+echo.
 
 REM Getting hbappstore latest version
 SET my_url=https://api.github.com/repos/vgmoose/hb-appstore/releases/latest
